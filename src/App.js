@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import {Navbar, Footer, Routers} from './components'
+import {useState} from 'react'
+import {useResultContext} from './contexts/ResultContextProvider'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  // const [darkTheme, setDarkTheme] = useState(true)
+  const {searchField, darkTheme, setDarkTheme} = useResultContext()
+    return (
+    <div className={darkTheme ? 'dark' : ''}>  
+    <div className='bg-gray-100 dark:bg-gray-900 dark:text-white min-h-screen'>
+      <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+      <Routers/>
+      <Footer/>
+    </div>
+    
+
     </div>
   );
 }
