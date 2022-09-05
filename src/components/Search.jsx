@@ -20,7 +20,7 @@ const Search = () => {
   const setSpeech = () => {
     setClicks(clicks => clicks + 1)
     console.log(clicks)
-    if (clicks % 2 !== 0) {
+    if (clicks % 2 === 0) {
       setSearchField('Listening...')
       SpeechRecognition.startListening()
     } else {
